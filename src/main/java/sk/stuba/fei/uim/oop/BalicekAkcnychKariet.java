@@ -1,4 +1,4 @@
-package sk.stuba.fei.uim.oop.karty;
+package sk.stuba.fei.uim.oop;
 
 public class BalicekAkcnychKariet {
 }

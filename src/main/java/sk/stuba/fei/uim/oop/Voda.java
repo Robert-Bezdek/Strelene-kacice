@@ -1,5 +1,4 @@
 package sk.stuba.fei.uim.oop;
 
-public class Rybnik {
-
+public class Voda {
 }
