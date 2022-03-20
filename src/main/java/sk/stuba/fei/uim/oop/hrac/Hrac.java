@@ -11,10 +11,12 @@ public class Hrac {
     private List<AkcneKarty> kartyHraca = new ArrayList<>();
 
     public int getCisloHraca(){
+
         return cisloHraca;
     };
 
     public void dajKartuHracovi(AkcneKarty karta){
+
         kartyHraca.add(karta);
     };
 }
