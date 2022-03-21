@@ -1,8 +1,6 @@
 package sk.stuba.fei.uim.oop.streleneKacice;
 
-import sk.stuba.fei.uim.oop.BalicekAkcnychKariet;
-import sk.stuba.fei.uim.oop.BalicekKaciekaVody;
-import sk.stuba.fei.uim.oop.Rybnik;
+import sk.stuba.fei.uim.oop.*;
 import sk.stuba.fei.uim.oop.hrac.Hrac;
 import sk.stuba.fei.uim.oop.utility.KeyboardInput;
 
@@ -41,5 +39,13 @@ public class StreleneKacice {
 
         BalicekKaciekaVody b = new BalicekKaciekaVody(pocetHracov, 5, 5);
         Rybnik r = new Rybnik();
+        Zameriavac z = new Zameriavac();
+
+        r.vlozKartuNaKoniec(b.lizniKartu());
+        r.vlozKartuNaKoniec(b.lizniKartu());
+        r.vlozKartuNaKoniec(b.lizniKartu());
+        r.vlozKartuNaKoniec(b.lizniKartu());
+        r.vlozKartuNaKoniec(b.lizniKartu());
+        r.vlozKartuNaKoniec(b.lizniKartu());
     }
 }
