@@ -19,4 +19,8 @@ public class Hrac {
 
         kartyHraca.add(karta);
     };
+
+    public Hrac(int cisloHraca){
+        this.cisloHraca = cisloHraca;
+    }
 }
