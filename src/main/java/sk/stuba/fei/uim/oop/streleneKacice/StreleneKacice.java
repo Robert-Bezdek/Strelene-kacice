@@ -47,5 +47,24 @@ public class StreleneKacice {
         r.vlozKartuNaKoniec(b.lizniKartu());
         r.vlozKartuNaKoniec(b.lizniKartu());
         r.vlozKartuNaKoniec(b.lizniKartu());
+
+        KacaciPochod kacaciPochod = new KacaciPochod();
+        vypisHraciePole(r,z);
+        System.out.println();
+        kacaciPochod.pouzitKartu(r, b, z);
+        vypisHraciePole(r,z);
+    }
+
+    void vypisHraciePole(Rybnik rybnik, Zameriavac zameriavac){
+        for (int i = 0; i<=5; i++){
+            System.out.print(
+                    zameriavac.jeZameriavac(i) ? "Zamierene" : "Nezamierene"
+            );
+            System.out.print(" - ");
+            System.out.println(
+                    rybnik.pozriKartu(i).toString()
+            );
+
+        }
     }
 }
