@@ -11,7 +11,7 @@ public class Kacica implements KartaRybnika {
 
     public Kacica(int patriHracovi){
         this.patriHracovi = patriHracovi;
-    };
+    }
 
     @Override
     public String toString(){

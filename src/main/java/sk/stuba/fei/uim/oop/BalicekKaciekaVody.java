@@ -24,17 +24,17 @@ public class BalicekKaciekaVody {
             }
         }
         zamiesaj();
-    };
+    }
 
     public void zamiesaj(){
         Collections.shuffle(kartyRybnika);
-    };
+    }
 
     public KartaRybnika lizniKartu(){
         return kartyRybnika.remove(0);
-    };
+    }
 
     public void vlozNaKoniec(KartaRybnika k){
         kartyRybnika.add(k);
-    };
+    }
 }

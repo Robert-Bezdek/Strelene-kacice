@@ -9,16 +9,12 @@ import java.util.List;
 
 public class StreleneKacice {
 
-    private List<Hrac> hraci = new LinkedList<Hrac>();
-
     private boolean neplatnyPocetHracov(int pocetHracov){
         return !(pocetHracov>=2 && pocetHracov<=6);
     }
 
     public StreleneKacice() {
-
         System.out.println("Vytajte v hre FEI Strelene kacice");
-
         int pocetHracov;
         do {
             pocetHracov = KeyboardInput.readInt("Vlozte pocet hracov od 2 do 6 a stlacte ENTER");
@@ -26,6 +22,7 @@ public class StreleneKacice {
 
         System.out.println("Zadali ste " + pocetHracov);
 
+        List<Hrac> hraci = new LinkedList<>();
         for (int cisloHraca = 1; cisloHraca <= pocetHracov; cisloHraca++){
             Hrac hrac = new Hrac(cisloHraca);
 

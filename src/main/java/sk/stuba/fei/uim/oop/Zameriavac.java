@@ -3,7 +3,7 @@ package sk.stuba.fei.uim.oop;
 import java.util.ArrayList;
 
 public class Zameriavac {
-    private boolean[] zameriavace = new boolean[6];
+    private final boolean[] zameriavace = new boolean[6];
 
     public boolean jeZameriavac(int ciel) {
         return zameriavace[ciel];
