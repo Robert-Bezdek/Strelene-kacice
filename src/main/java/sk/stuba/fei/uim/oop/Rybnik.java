@@ -26,4 +26,6 @@ public class Rybnik {
     public void vlozKartuNaKoniec(KartaRybnika k){
         kartyRybnika.add(k);
     }
+
+    public void vlozKartuNaZaciatok(KartaRybnika k) {kartyRybnika.add(0,k);}
 }

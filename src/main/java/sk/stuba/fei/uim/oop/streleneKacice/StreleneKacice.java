@@ -50,10 +50,17 @@ public class StreleneKacice {
         System.out.println();
         kacaciPochod.pouzitKartu(r, b, z);
         vypisHraciePole(r,z);
+
+        Turbokacka tk = new Turbokacka();
+        System.out.println("Vypisujem obsah rybnika pred pouzitim karty TURBOKACKA:");
+        vypisHraciePole(r,z);
+        tk.pouzitKartu(r,b,z);
+        vypisHraciePole(r,z);
     }
 
     void vypisHraciePole(Rybnik rybnik, Zameriavac zameriavac){
         for (int i = 0; i<=5; i++){
+            System.out.print(i + ". ");
             System.out.print(
                     zameriavac.jeZameriavac(i) ? "Zamierene" : "Nezamierene"
             );
@@ -61,7 +68,6 @@ public class StreleneKacice {
             System.out.println(
                     rybnik.pozriKartu(i).toString()
             );
-
         }
     }
 }
