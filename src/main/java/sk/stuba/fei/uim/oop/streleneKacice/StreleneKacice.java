@@ -46,27 +46,27 @@ public class StreleneKacice {
         r.vlozKartuNaKoniec(b.lizniKartu());
 
         KacaciPochod kacaciPochod = new KacaciPochod();
+        //System.out.println("Vypisujem obsah rybnika pred pouzitim karty KACACI POCHOD:");
         vypisHraciePole(r,z);
-        System.out.println();
-        kacaciPochod.pouzitKartu(r, b, z);
+        //kacaciPochod.pouzitKartu(r, b, z);
         vypisHraciePole(r,z);
 
         Turbokacka tk = new Turbokacka();
-        System.out.println("Vypisujem obsah rybnika pred pouzitim karty TURBOKACKA:");
+        //System.out.println("Vypisujem obsah rybnika pred pouzitim karty TURBOKACKA:");
         vypisHraciePole(r,z);
         //tk.pouzitKartu(r,b,z);
         vypisHraciePole(r,z);
 
         KacaciTanec kt = new KacaciTanec();
-        System.out.println("Vypisujem obsah rybnika pred pouzitim karty KACACI TANEC:");
+        //System.out.println("Vypisujem obsah rybnika pred pouzitim karty KACACI TANEC:");
         vypisHraciePole(r,z);
         //kt.pouzitKartu(r,b,z);
         vypisHraciePole(r,z);
 
         Rosambo rosambo = new Rosambo();
-        System.out.println("Vypisujem obsah rybnika pred pouzitim karty ROSAMBO:");
+        //System.out.println("Vypisujem obsah rybnika pred pouzitim karty ROSAMBO:");
         vypisHraciePole(r,z);
-        rosambo.pouzitKartu(r,b,z);
+        //rosambo.pouzitKartu(r,b,z);
         vypisHraciePole(r,z);
     }
 
