@@ -68,6 +68,18 @@ public class StreleneKacice {
         vypisHraciePole(r,z);
         //rosambo.pouzitKartu(r,b,z);
         vypisHraciePole(r,z);
+
+        BalicekAkcnychKariet bak = new BalicekAkcnychKariet();
+        bak.pridaj(new KacaciTanec());
+        bak.pridaj(new Turbokacka());
+        bak.pridaj(new Rosambo());
+        bak.pridaj(new Rosambo());
+        bak.pridaj(new KacaciPochod());
+        bak.pridaj(new KacaciPochod());
+        bak.pridaj(new KacaciPochod());
+        bak.pridaj(new KacaciPochod());
+        bak.pridaj(new KacaciPochod());
+        bak.pridaj(new KacaciPochod());
     }
 
     void vypisHraciePole(Rybnik rybnik, Zameriavac zameriavac){
