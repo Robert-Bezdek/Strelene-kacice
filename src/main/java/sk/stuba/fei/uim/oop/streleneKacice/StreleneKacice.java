@@ -54,7 +54,13 @@ public class StreleneKacice {
         Turbokacka tk = new Turbokacka();
         System.out.println("Vypisujem obsah rybnika pred pouzitim karty TURBOKACKA:");
         vypisHraciePole(r,z);
-        tk.pouzitKartu(r,b,z);
+        //tk.pouzitKartu(r,b,z);
+        vypisHraciePole(r,z);
+
+        KacaciTanec kt = new KacaciTanec();
+        System.out.println("Vypisujem obsah rybnika pred pouzitim karty KACACI TANEC:");
+        vypisHraciePole(r,z);
+        kt.pouzitKartu(r,b,z);
         vypisHraciePole(r,z);
     }
 

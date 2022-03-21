@@ -4,6 +4,7 @@ import sk.stuba.fei.uim.oop.KartyRybnika.Kacica;
 import sk.stuba.fei.uim.oop.KartyRybnika.KartaRybnika;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Rybnik {
