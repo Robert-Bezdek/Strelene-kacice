@@ -29,4 +29,8 @@ public class Rybnik {
     }
 
     public void vlozKartuNaZaciatok(KartaRybnika k) {kartyRybnika.add(0,k);}
+
+    public void zamiesaj(){
+        Collections.shuffle(kartyRybnika);
+    }
 }

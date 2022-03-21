@@ -60,7 +60,13 @@ public class StreleneKacice {
         KacaciTanec kt = new KacaciTanec();
         System.out.println("Vypisujem obsah rybnika pred pouzitim karty KACACI TANEC:");
         vypisHraciePole(r,z);
-        kt.pouzitKartu(r,b,z);
+        //kt.pouzitKartu(r,b,z);
+        vypisHraciePole(r,z);
+
+        Rosambo rosambo = new Rosambo();
+        System.out.println("Vypisujem obsah rybnika pred pouzitim karty ROSAMBO:");
+        vypisHraciePole(r,z);
+        rosambo.pouzitKartu(r,b,z);
         vypisHraciePole(r,z);
     }
 
