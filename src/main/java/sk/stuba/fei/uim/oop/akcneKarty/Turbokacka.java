@@ -1,6 +1,9 @@
-package sk.stuba.fei.uim.oop;
+package sk.stuba.fei.uim.oop.akcneKarty;
 
+import sk.stuba.fei.uim.oop.BalicekKaciekaVody;
 import sk.stuba.fei.uim.oop.KartyRybnika.Voda;
+import sk.stuba.fei.uim.oop.Rybnik;
+import sk.stuba.fei.uim.oop.Zameriavac;
 import sk.stuba.fei.uim.oop.utility.KeyboardInput;
 
 public class Turbokacka implements AkcneKarty {

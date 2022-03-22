@@ -1,6 +1,6 @@
 package sk.stuba.fei.uim.oop.hrac;
 
-import sk.stuba.fei.uim.oop.AkcneKarty;
+import sk.stuba.fei.uim.oop.akcneKarty.AkcneKarty;
 
 import java.util.ArrayList;
 import java.util.List;

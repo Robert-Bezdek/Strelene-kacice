@@ -1,7 +1,8 @@
 package sk.stuba.fei.uim.oop;
 
+import sk.stuba.fei.uim.oop.akcneKarty.AkcneKarty;
+
 import java.util.LinkedList;
-import java.util.List;
 
 public class BalicekAkcnychKariet {
     LinkedList<AkcneKarty> akcneKarty = new LinkedList<>();

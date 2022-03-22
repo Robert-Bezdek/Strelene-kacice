@@ -1,6 +1,10 @@
 package sk.stuba.fei.uim.oop.streleneKacice;
 
 import sk.stuba.fei.uim.oop.*;
+import sk.stuba.fei.uim.oop.akcneKarty.KacaciPochod;
+import sk.stuba.fei.uim.oop.akcneKarty.KacaciTanec;
+import sk.stuba.fei.uim.oop.akcneKarty.Rosambo;
+import sk.stuba.fei.uim.oop.akcneKarty.Turbokacka;
 import sk.stuba.fei.uim.oop.hrac.Hrac;
 import sk.stuba.fei.uim.oop.utility.KeyboardInput;
 
