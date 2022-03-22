@@ -103,13 +103,17 @@ public class StreleneKacice {
 
         Zamierit kartaZamierit = new Zamierit();
         z.vypis();
-        kartaZamierit.pouzitKartu(r,b,z);
+        //kartaZamierit.pouzitKartu(r,b,z);
         z.vypis();
-        kartaZamierit.pouzitKartu(r,b,z);
+        //kartaZamierit.pouzitKartu(r,b,z);
         z.vypis();
-        kartaZamierit.pouzitKartu(r,b,z);
+        //kartaZamierit.pouzitKartu(r,b,z);
         z.vypis();
 
+        Vystrelit kartaVystrelit = new Vystrelit();
+        vypisHraciePole(r,z);
+        kartaVystrelit.pouzitKartu(r,b,z);
+        vypisHraciePole(r,z);
     }
 
     void vypisHraciePole(Rybnik rybnik, Zameriavac zameriavac){

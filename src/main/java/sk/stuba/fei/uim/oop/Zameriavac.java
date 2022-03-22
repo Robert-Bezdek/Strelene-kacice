@@ -1,5 +1,7 @@
 package sk.stuba.fei.uim.oop;
 
+import sk.stuba.fei.uim.oop.KartyRybnika.Voda;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -30,5 +32,12 @@ public class Zameriavac {
 
     public void vypis(){
         System.out.println(zameriavace);
+    }
+
+    public void vystrel(int ciel){
+        if (!jeZameriavac(ciel)) {
+            throw new IllegalArgumentException("Zamierit vieme zahrat iba na policko, nad ktorym je zameriavac.");
+        }
+        odstranitZameriavac(ciel);
     }
 }
