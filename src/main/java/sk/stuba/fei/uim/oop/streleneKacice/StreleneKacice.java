@@ -23,18 +23,6 @@ public class StreleneKacice {
 
         System.out.println("Zadali ste " + pocetHracov);
 
-        List<Hrac> hraci = new LinkedList<>();
-        for (int cisloHraca = 1; cisloHraca <= pocetHracov; cisloHraca++){
-            Hrac hrac = new Hrac(cisloHraca);
-
-            // TODO: rozdaj 3 akcne karty hracovi (az ked naprogramujeme BalicekAkcnychKariet)
-            //hrac.dajKartuHracovi(balicekAkcnychKariet.lizni());
-            //hrac.dajKartuHracovi(balicekAkcnychKariet.lizni());
-            //hrac.dajKartuHracovi(balicekAkcnychKariet.lizni());
-
-            hraci.add(hrac);
-        }
-
         BalicekKaciekaVody b = new BalicekKaciekaVody(pocetHracov, 5, 5);
         Rybnik r = new Rybnik();
         Zameriavac z = new Zameriavac();
@@ -124,6 +112,17 @@ public class StreleneKacice {
         vypisHraciePole(r,z);
         kartaVystrelit.pouzitKartu(r,b,z);
         vypisHraciePole(r,z);
+
+        List<Hrac> hraci = new LinkedList<>();
+        for (int cisloHraca = 1; cisloHraca <= pocetHracov; cisloHraca++){
+            Hrac hrac = new Hrac(cisloHraca);
+
+            hrac.dajKartuHracovi(bak.lizni());
+            hrac.dajKartuHracovi(bak.lizni());
+            hrac.dajKartuHracovi(bak.lizni());
+
+            hraci.add(hrac);
+        }
     }
 
     void vypisHraciePole(Rybnik rybnik, Zameriavac zameriavac){
