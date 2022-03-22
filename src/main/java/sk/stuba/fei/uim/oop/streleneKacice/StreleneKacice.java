@@ -1,10 +1,7 @@
 package sk.stuba.fei.uim.oop.streleneKacice;
 
 import sk.stuba.fei.uim.oop.*;
-import sk.stuba.fei.uim.oop.akcneKarty.KacaciPochod;
-import sk.stuba.fei.uim.oop.akcneKarty.KacaciTanec;
-import sk.stuba.fei.uim.oop.akcneKarty.Rosambo;
-import sk.stuba.fei.uim.oop.akcneKarty.Turbokacka;
+import sk.stuba.fei.uim.oop.akcneKarty.*;
 import sk.stuba.fei.uim.oop.hrac.Hrac;
 import sk.stuba.fei.uim.oop.utility.KeyboardInput;
 
@@ -103,6 +100,15 @@ public class StreleneKacice {
         } catch (IllegalArgumentException e){
             System.out.println(e.getMessage());
         }
+
+        Zamierit kartaZamierit = new Zamierit();
+        z.vypis();
+        kartaZamierit.pouzitKartu(r,b,z);
+        z.vypis();
+        kartaZamierit.pouzitKartu(r,b,z);
+        z.vypis();
+        kartaZamierit.pouzitKartu(r,b,z);
+        z.vypis();
 
     }
 
