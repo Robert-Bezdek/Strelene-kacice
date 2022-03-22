@@ -84,6 +84,26 @@ public class StreleneKacice {
         bak.pridaj(new KacaciPochod());
         bak.pridaj(new KacaciPochod());
         bak.pridaj(new KacaciPochod());
+
+        z.vypis();
+        z.zamierit(0);
+        z.vypis();
+        z.odstranitZameriavac(0);
+        z.vypis();
+
+        try {
+            z.zamierit(12345);
+        } catch (IndexOutOfBoundsException e){
+            System.out.println("Neplatna pozicia zameriavaca, platne pozicie su 0,1,2,3,4,5.");
+        }
+
+        try {
+            z.zamierit(5);
+            z.zamierit(5);
+        } catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
+
     }
 
     void vypisHraciePole(Rybnik rybnik, Zameriavac zameriavac){

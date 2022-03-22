@@ -1,19 +1,34 @@
 package sk.stuba.fei.uim.oop;
 
+import java.util.List;
 import java.util.ArrayList;
 
 public class Zameriavac {
-    private final boolean[] zameriavace = new boolean[6];
+    private final List<Boolean> zameriavace = new ArrayList<>();
+
+    public Zameriavac(){
+        for (int i=1; i<=6; i++){
+            zameriavace.add(Boolean.FALSE);
+        }
+    }
 
     public boolean jeZameriavac(int ciel) {
-        return zameriavace[ciel];
+        return zameriavace.get(ciel);
     }
 
     public void zamierit (int ciel) {
-        zameriavace [ciel] = true;
+        if (jeZameriavac(ciel)) {
+            throw new IllegalArgumentException("Zamierit vieme zahrat iba na policko, nad ktorym este zameriavac nie je.");
+        }
+
+        zameriavace.set(ciel, Boolean.TRUE);
     }
 
     public void odstranitZameriavac(int ciel) {
-        zameriavace [ciel] = false;
+        zameriavace.set(ciel, Boolean.FALSE);
+    }
+
+    public void vypis(){
+        System.out.println(zameriavace);
     }
 }
