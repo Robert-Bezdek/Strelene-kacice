@@ -81,6 +81,16 @@ public class StreleneKacice {
         bak.pridaj(new KacaciPochod());
         bak.pridaj(new KacaciPochod());
         bak.pridaj(new KacaciPochod());
+        bak.pridaj(new DivokyBill());
+        bak.pridaj(new DivokyBill());
+
+        for (int i=1; i<=10; i++){
+            bak.pridaj(new Zamierit());
+        }
+
+        for (int i=1; i<=12; i++){
+            bak.pridaj(new Vystrelit());
+        }
 
         z.vypis();
         z.zamierit(0);
