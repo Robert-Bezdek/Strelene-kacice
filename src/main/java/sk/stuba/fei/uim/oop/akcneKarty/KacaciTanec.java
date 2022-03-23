@@ -19,4 +19,9 @@ public class KacaciTanec implements AkcneKarty {
             r.vlozKartuNaKoniec(b.lizniKartu());
         }
     }
+
+    @Override
+    public String toString(){
+        return "Kacaci tanec";
+    }
 }

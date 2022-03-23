@@ -13,4 +13,9 @@ public class DivokyBill implements AkcneKarty {
         zamierit.pouzitKartu(r,b,z);
         vystrelit.pouzitKartu(r,b,z);
     }
+
+    @Override
+    public String toString(){
+        return "Divoky Bill";
+    }
 }

@@ -10,4 +10,9 @@ public class Rosambo implements AkcneKarty {
         System.out.println("Hrame akcnu kartu ROSAMBO");
         r.zamiesaj();
     }
+
+    @Override
+    public String toString(){
+        return "Rosambo";
+    }
 }

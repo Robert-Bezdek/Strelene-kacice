@@ -14,4 +14,9 @@ public class KacaciPochod implements AkcneKarty {
                 balicekKaciekaVody.lizniKartu()
         );
     }
+
+    @Override
+    public String toString(){
+        return "Kacaci pochod";
+    }
 }

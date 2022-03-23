@@ -21,4 +21,9 @@ public class Zamierit implements AkcneKarty {
             }
         } while (true);
     }
+
+    @Override
+    public String toString(){
+        return "Zamierit";
+    }
 }

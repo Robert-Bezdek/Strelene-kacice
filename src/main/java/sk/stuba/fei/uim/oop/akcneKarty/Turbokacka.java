@@ -26,4 +26,9 @@ public class Turbokacka implements AkcneKarty {
                 r.vyberKartu(poziciaKacky)
         );
     }
+
+    @Override
+    public String toString(){
+        return "Turbokacka";
+    }
 }
