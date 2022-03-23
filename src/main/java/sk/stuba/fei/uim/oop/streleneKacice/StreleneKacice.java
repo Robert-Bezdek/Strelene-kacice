@@ -23,10 +23,43 @@ public class StreleneKacice {
 
         System.out.println("Zadali ste " + pocetHracov);
 
-        BalicekKaciekaVody b = new BalicekKaciekaVody(pocetHracov, 5, 5);
         Rybnik r = new Rybnik();
         Zameriavac z = new Zameriavac();
 
+        BalicekAkcnychKariet bak = new BalicekAkcnychKariet();
+        bak.pridaj(new KacaciTanec());
+        bak.pridaj(new Turbokacka());
+        bak.pridaj(new Rosambo());
+        bak.pridaj(new Rosambo());
+        bak.pridaj(new KacaciPochod());
+        bak.pridaj(new KacaciPochod());
+        bak.pridaj(new KacaciPochod());
+        bak.pridaj(new KacaciPochod());
+        bak.pridaj(new KacaciPochod());
+        bak.pridaj(new KacaciPochod());
+        bak.pridaj(new DivokyBill());
+        bak.pridaj(new DivokyBill());
+
+        for (int i=1; i<=10; i++){
+            bak.pridaj(new Zamierit());
+        }
+
+        for (int i=1; i<=12; i++){
+            bak.pridaj(new Vystrelit());
+        }
+
+        List<Hrac> hraci = new LinkedList<>();
+        for (int cisloHraca = 1; cisloHraca <= pocetHracov; cisloHraca++){
+            Hrac hrac = new Hrac(cisloHraca);
+
+            hrac.dajKartuHracovi(bak.lizni());
+            hrac.dajKartuHracovi(bak.lizni());
+            hrac.dajKartuHracovi(bak.lizni());
+
+            hraci.add(hrac);
+        }
+
+        BalicekKaciekaVody b = new BalicekKaciekaVody(pocetHracov, 5, hraci);
         r.vlozKartuNaKoniec(b.lizniKartu());
         r.vlozKartuNaKoniec(b.lizniKartu());
         r.vlozKartuNaKoniec(b.lizniKartu());
@@ -34,6 +67,56 @@ public class StreleneKacice {
         r.vlozKartuNaKoniec(b.lizniKartu());
         r.vlozKartuNaKoniec(b.lizniKartu());
 
+        while (hraci.size() > 1){
+            System.out.println("\nZacina nove kolo");
+            System.out.println("\nZostalo " + hraci.size() + " hracov");
+
+            for (Hrac hrac : hraci) {
+                AkcneKarty karta = hrac.vyberKartu();
+
+                vypisHraciePole(r,z);
+                karta.pouzitKartu(r,b,z);
+                vypisHraciePole(r,z);
+
+                if (hrac.getPocetZivotov() == 0){
+                    hraci.remove(hrac);
+                } else {
+                    hrac.dajKartuHracovi(bak.lizni());
+                }
+            }
+
+            vypisPoctyZivotov(hraci);
+            System.out.println("\nKoniec kola. Stlacte ENTER pre nove kolo.");
+            KeyboardInput.readChar();
+        }
+
+        System.out.println("Vitazom je hrac cislo " + hraci.get(0).getCisloHraca());
+    }
+
+    private void vypisPoctyZivotov(final List<Hrac> hraci){
+        for (Hrac h: hraci){
+            System.out.println("Hrac " + h.getCisloHraca() + " ma "+ h.getPocetZivotov() + " zivotov");
+        }
+    }
+
+    void vypisHraciePole(Rybnik rybnik, Zameriavac zameriavac){
+        System.out.println();
+
+        for (int i = 0; i<=5; i++){
+            System.out.print(i + ". ");
+            System.out.print(
+                    zameriavac.jeZameriavac(i) ? "Zamierene" : "Nezamierene"
+            );
+            System.out.print(" - ");
+            System.out.println(
+                    rybnik.pozriKartu(i).toString()
+            );
+        }
+
+        System.out.println();
+    }
+
+    private void testAkcnychKariet(Rybnik r, Zameriavac z){
         KacaciPochod kacaciPochod = new KacaciPochod();
         //System.out.println("Vypisujem obsah rybnika pred pouzitim karty KACACI POCHOD:");
         vypisHraciePole(r,z);
@@ -58,28 +141,13 @@ public class StreleneKacice {
         //rosambo.pouzitKartu(r,b,z);
         vypisHraciePole(r,z);
 
-        BalicekAkcnychKariet bak = new BalicekAkcnychKariet();
-        bak.pridaj(new KacaciTanec());
-        bak.pridaj(new Turbokacka());
-        bak.pridaj(new Rosambo());
-        bak.pridaj(new Rosambo());
-        bak.pridaj(new KacaciPochod());
-        bak.pridaj(new KacaciPochod());
-        bak.pridaj(new KacaciPochod());
-        bak.pridaj(new KacaciPochod());
-        bak.pridaj(new KacaciPochod());
-        bak.pridaj(new KacaciPochod());
-        bak.pridaj(new DivokyBill());
-        bak.pridaj(new DivokyBill());
+        Vystrelit kartaVystrelit = new Vystrelit();
+        vypisHraciePole(r,z);
+        //kartaVystrelit.pouzitKartu(r,b,z);
+        vypisHraciePole(r,z);
+    }
 
-        for (int i=1; i<=10; i++){
-            bak.pridaj(new Zamierit());
-        }
-
-        for (int i=1; i<=12; i++){
-            bak.pridaj(new Vystrelit());
-        }
-
+    private void testZameriavaca(Zameriavac z){
         z.vypis();
         z.zamierit(0);
         z.vypis();
@@ -107,62 +175,5 @@ public class StreleneKacice {
         z.vypis();
         //kartaZamierit.pouzitKartu(r,b,z);
         z.vypis();
-
-        Vystrelit kartaVystrelit = new Vystrelit();
-        vypisHraciePole(r,z);
-        //kartaVystrelit.pouzitKartu(r,b,z);
-        vypisHraciePole(r,z);
-
-        List<Hrac> hraci = new LinkedList<>();
-        for (int cisloHraca = 1; cisloHraca <= pocetHracov; cisloHraca++){
-            Hrac hrac = new Hrac(cisloHraca);
-
-            hrac.dajKartuHracovi(bak.lizni());
-            hrac.dajKartuHracovi(bak.lizni());
-            hrac.dajKartuHracovi(bak.lizni());
-
-            hraci.add(hrac);
-        }
-
-        while (hraci.size() > 1){
-            System.out.println("\nZacina nove kolo");
-            System.out.println("\nZostalo " + hraci.size() + " hracov");
-
-            for (Hrac hrac : hraci) {
-                AkcneKarty karta = hrac.vyberKartu();
-
-                vypisHraciePole(r,z);
-                karta.pouzitKartu(r,b,z);
-                vypisHraciePole(r,z);
-
-                if (hrac.getPocetZivotov() == 0){
-                    hraci.remove(hrac);
-                } else {
-                    hrac.dajKartuHracovi(bak.lizni());
-                }
-            }
-
-            System.out.println("\nKoniec kola. Stlacte ENTER pre nove kolo.");
-            KeyboardInput.readChar();
-        }
-
-        System.out.println("Vitazom je hrac cislo " + hraci.get(0).getCisloHraca());
-    }
-
-    void vypisHraciePole(Rybnik rybnik, Zameriavac zameriavac){
-        System.out.println();
-
-        for (int i = 0; i<=5; i++){
-            System.out.print(i + ". ");
-            System.out.print(
-                    zameriavac.jeZameriavac(i) ? "Zamierene" : "Nezamierene"
-            );
-            System.out.print(" - ");
-            System.out.println(
-                    rybnik.pozriKartu(i).toString()
-            );
-        }
-
-        System.out.println();
     }
 }
