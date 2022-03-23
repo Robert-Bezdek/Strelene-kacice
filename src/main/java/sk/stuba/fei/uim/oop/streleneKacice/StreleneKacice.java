@@ -110,7 +110,7 @@ public class StreleneKacice {
 
         Vystrelit kartaVystrelit = new Vystrelit();
         vypisHraciePole(r,z);
-        kartaVystrelit.pouzitKartu(r,b,z);
+        //kartaVystrelit.pouzitKartu(r,b,z);
         vypisHraciePole(r,z);
 
         List<Hrac> hraci = new LinkedList<>();
@@ -123,9 +123,35 @@ public class StreleneKacice {
 
             hraci.add(hrac);
         }
+
+        while (hraci.size() > 1){
+            System.out.println("\nZacina nove kolo");
+            System.out.println("\nZostalo " + hraci.size() + " hracov");
+
+            for (Hrac hrac : hraci) {
+                AkcneKarty karta = hrac.vyberKartu();
+
+                vypisHraciePole(r,z);
+                karta.pouzitKartu(r,b,z);
+                vypisHraciePole(r,z);
+
+                if (hrac.getPocetZivotov() == 0){
+                    hraci.remove(hrac);
+                } else {
+                    hrac.dajKartuHracovi(bak.lizni());
+                }
+            }
+
+            System.out.println("\nKoniec kola. Stlacte ENTER pre nove kolo.");
+            KeyboardInput.readChar();
+        }
+
+        System.out.println("Vitazom je hrac cislo " + hraci.get(0).getCisloHraca());
     }
 
     void vypisHraciePole(Rybnik rybnik, Zameriavac zameriavac){
+        System.out.println();
+
         for (int i = 0; i<=5; i++){
             System.out.print(i + ". ");
             System.out.print(
@@ -136,5 +162,7 @@ public class StreleneKacice {
                     rybnik.pozriKartu(i).toString()
             );
         }
+
+        System.out.println();
     }
 }
