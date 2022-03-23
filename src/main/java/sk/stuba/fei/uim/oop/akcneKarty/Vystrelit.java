@@ -15,7 +15,7 @@ public class Vystrelit implements AkcneKarty {
             try {
                 z.vystrel(ciel);
                 if (r.pozriKartu(ciel) instanceof Kacica){
-                    r.vyberKartu(ciel);
+                    ((Kacica) r.vyberKartu(ciel)).getPatriHracovi().zasiahni();
                     r.vlozKartuNaKoniec(b.lizniKartu());
                 }
 
