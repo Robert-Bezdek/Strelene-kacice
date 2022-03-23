@@ -2,6 +2,7 @@ package sk.stuba.fei.uim.oop;
 
 import sk.stuba.fei.uim.oop.akcneKarty.AkcneKarty;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class BalicekAkcnychKariet {
@@ -13,5 +14,9 @@ public class BalicekAkcnychKariet {
 
     public AkcneKarty lizni(){
         return this.akcneKarty.removeFirst();
+    }
+
+    public void zamiesaj(){
+        Collections.shuffle(akcneKarty);
     }
 }

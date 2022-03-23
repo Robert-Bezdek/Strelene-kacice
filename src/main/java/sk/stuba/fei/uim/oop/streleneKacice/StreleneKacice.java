@@ -48,6 +48,8 @@ public class StreleneKacice {
             bak.pridaj(new Vystrelit());
         }
 
+        bak.zamiesaj();
+
         List<Hrac> hraci = new LinkedList<>();
         for (int cisloHraca = 1; cisloHraca <= pocetHracov; cisloHraca++){
             Hrac hrac = new Hrac(cisloHraca);
