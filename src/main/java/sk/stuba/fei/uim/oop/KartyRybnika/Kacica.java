@@ -7,6 +7,10 @@ public class Kacica implements KartaRybnika {
         return patriHracovi;
     }
 
+    public String toString(){
+        return "Kacka hraca cislo " + getPatriHracovi();
+    }
+
     final int patriHracovi;
 
     public Kacica(int patriHracovi){
