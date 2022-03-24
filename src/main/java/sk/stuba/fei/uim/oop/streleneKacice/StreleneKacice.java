@@ -80,19 +80,20 @@ public class StreleneKacice {
                 karta.pouzitKartu(r,b,z);
                 vypisHraciePole(r,z);
 
-                if (hrac.getPocetZivotov() == 0){
-                    hraci.remove(hrac);
-                } else {
-                    hrac.dajKartuHracovi(bak.lizni());
-                }
+                hrac.dajKartuHracovi(bak.lizni());
             }
 
+            odstranMrtvychHracov(hraci);
             vypisPoctyZivotov(hraci);
             System.out.println("\nKoniec kola. Stlacte ENTER pre nove kolo.");
             KeyboardInput.readChar();
         }
 
         System.out.println("Vitazom je hrac cislo " + hraci.get(0).getCisloHraca());
+    }
+
+    private void odstranMrtvychHracov(List<Hrac> hraci){
+        hraci.removeIf(hrac -> hrac.getPocetZivotov() <= 0);
     }
 
     private void vypisPoctyZivotov(final List<Hrac> hraci){
