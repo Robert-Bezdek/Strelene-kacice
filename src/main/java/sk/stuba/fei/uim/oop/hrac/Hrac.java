@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Hrac {
     private final int cisloHraca;
-    private int pocetZivotov = 5;
+    private int pocetZivotov = 1;
 
     public int getPocetZivotov() {
         return pocetZivotov;
@@ -24,7 +24,7 @@ public class Hrac {
 
         int pozicia;
         do {
-            pozicia = KeyboardInput.readInt("Vlozte poziciu karty od 0 do 2 a stlacte ENTER");
+            pozicia = KeyboardInput.readInt("Hrac " + getCisloHraca() + ": Vlozte poziciu karty od 0 do 2 a stlacte ENTER");
 
             try {
                 return kartyHraca.remove(pozicia);
@@ -35,7 +35,10 @@ public class Hrac {
     }
 
     public void vypisKarty(){
-        System.out.println(kartyHraca);
+        System.out.println();
+        for (int i=0; i<=2; i++){
+            System.out.println(i + ". " + kartyHraca.get(i));
+        }
     }
 
     private final List<AkcneKarty> kartyHraca = new ArrayList<>();

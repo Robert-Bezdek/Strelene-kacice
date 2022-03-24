@@ -71,7 +71,7 @@ public class StreleneKacice {
 
         while (hraci.size() > 1){
             System.out.println("\nZacina nove kolo");
-            System.out.println("\nZostalo " + hraci.size() + " hracov");
+            System.out.println("Zostalo " + hraci.size() + " hracov\n");
 
             for (Hrac hrac : hraci) {
                 AkcneKarty karta = hrac.vyberKartu();
@@ -102,7 +102,7 @@ public class StreleneKacice {
     }
 
     void vypisHraciePole(Rybnik rybnik, Zameriavac zameriavac){
-        System.out.println();
+        System.out.println("Vypisujem hracie pole:");
 
         for (int i = 0; i<=5; i++){
             System.out.print(i + ". ");
