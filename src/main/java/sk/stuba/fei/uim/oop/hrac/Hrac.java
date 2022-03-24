@@ -15,7 +15,9 @@ public class Hrac {
     }
 
     public void zasiahni(){
+        System.out.println("Zasiahli sme hraca " + getCisloHraca());
         --pocetZivotov;
+        System.out.println("Zostalo mu " + getPocetZivotov() + " zivotov\n");
     }
 
     public AkcneKarty vyberKartu(){
