@@ -36,7 +36,7 @@ public class Zameriavac {
 
     public void vystrel(int ciel){
         if (!jeZameriavac(ciel)) {
-            throw new IllegalArgumentException("Zamierit vieme zahrat iba na policko, nad ktorym je zameriavac.");
+            throw new IllegalArgumentException("Vystrelit vieme iba na policko, nad ktorym je zameriavac.");
         }
         odstranitZameriavac(ciel);
     }
