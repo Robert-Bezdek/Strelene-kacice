@@ -1,19 +1,19 @@
 package sk.stuba.fei.uim.oop.KartyRybnika;
 
-import sk.stuba.fei.uim.oop.KartyRybnika.KartaRybnika;
+import sk.stuba.fei.uim.oop.hrac.Hrac;
 
 public class Kacica implements KartaRybnika {
-    public int getPatriHracovi() {
+    public Hrac getPatriHracovi() {
         return patriHracovi;
     }
 
     public String toString(){
-        return "Kacka hraca cislo " + getPatriHracovi();
+        return "Kacka hraca cislo " + getPatriHracovi().getCisloHraca();
     }
 
-    final int patriHracovi;
+    final Hrac patriHracovi;
 
-    public Kacica(int patriHracovi){
+    public Kacica(Hrac patriHracovi){
         this.patriHracovi = patriHracovi;
     };
 }

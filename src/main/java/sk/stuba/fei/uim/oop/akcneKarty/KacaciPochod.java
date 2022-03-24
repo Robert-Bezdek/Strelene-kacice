@@ -10,4 +10,7 @@ public class KacaciPochod implements AkcneKarty {
         b.vlozNaKoniec(r.vyberKartuZoZaciatkuRybnika());
         r.vlozKartuNakoniecRybnika(b.lizniKartu());
     }
+    public String toString(){
+        return "Kacaci pochod";
+    }
 }

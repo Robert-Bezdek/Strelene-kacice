@@ -3,6 +3,7 @@ package sk.stuba.fei.uim.oop;
 import sk.stuba.fei.uim.oop.KartyRybnika.Kacica;
 import sk.stuba.fei.uim.oop.KartyRybnika.KartaRybnika;
 import sk.stuba.fei.uim.oop.KartyRybnika.Voda;
+import sk.stuba.fei.uim.oop.hrac.Hrac;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,15 +13,15 @@ public class BalicekKaciekaVody {
 
     List<KartaRybnika> kartyRybnika = new ArrayList<>();
 
-    public BalicekKaciekaVody(int pocetHracov, int pocetKarietVoda, int pocetKacicNaHraca) {
+    public BalicekKaciekaVody(int pocetHracov, int pocetKarietVoda, List<Hrac> hraci) {
 
         for (int i = 1; i <= pocetKarietVoda; i++) {
             kartyRybnika.add(new Voda());
         }
 
-        for (int cisloHraca = 1; cisloHraca <= pocetHracov; cisloHraca++) {
-            for (int cisloKacice = 1; cisloKacice <= pocetKacicNaHraca; cisloKacice++) {
-                kartyRybnika.add(new Kacica(cisloHraca));
+        for (Hrac h: hraci) {
+            for (int i=1; i<=5; i++) {
+                kartyRybnika.add(new Kacica(h));
             }
         }
         zamiesaj();

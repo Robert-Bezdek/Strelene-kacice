@@ -10,4 +10,8 @@ public class Rosambo implements AkcneKarty {
         System.out.println("Prave si kartu Rosambo");
         r.zamiesaj();
     }
+
+    public String toString(){
+        return "Rosambo";
+    }
 }

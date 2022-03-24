@@ -16,4 +16,8 @@ public class KacaciTanec implements AkcneKarty {
             r.vlozKartuNakoniecRybnika(b.lizniKartu());
         }
     }
+
+    public String toString(){
+        return "Kacaci tanec";
+    }
 }

@@ -24,4 +24,8 @@ public class Turbokacka implements AkcneKarty {
 
         r.vlozKartuNaZaciatok(r.vyberKartu(poziciaKacky));
     }
+
+    public String toString(){
+        return "Turbokacka";
+    }
 }

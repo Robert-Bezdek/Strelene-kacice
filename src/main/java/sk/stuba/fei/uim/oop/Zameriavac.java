@@ -29,9 +29,23 @@ public class Zameriavac {
     }
 
     public void vystrel(int ciel) {
+        if (vsetkyPolickaSuNezamierene()) {
+            throw new IllegalArgumentException("Nemozem vystrelit, pretoze nikde nie je zamierene. Vyber dalsiu kartu");
+        }
         if (!jeZameriavac(ciel)) {
-            throw new IllegalArgumentException("Zamierit vieme zahrat iba na policko, nad ktorym je zameriavac.");
+            throw new IllegalArgumentException("Vystrelit vieme zahrat iba na policko, nad ktorym je zameriavac.");
         }
         odstranitZameriavac(ciel);
+    }
+
+    private boolean vsetkyPolickaSuNezamierene() {
+        boolean vsetkySuNezamierene = true;
+        for (Boolean zameriavac: zameriavace){
+            if (zameriavac == Boolean.TRUE) {
+                vsetkySuNezamierene = false;
+                break;
+            }
+        }
+        return vsetkySuNezamierene;
     }
 }

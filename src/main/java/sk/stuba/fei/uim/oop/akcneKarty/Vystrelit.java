@@ -26,4 +26,9 @@ public class Vystrelit implements AkcneKarty {
             }
         } while (true);
     }
+
+    public String toString(){
+        return "Vystrelit";
+    }
+
 }
