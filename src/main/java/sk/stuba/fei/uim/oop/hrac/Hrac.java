@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Hrac {
     private final int cisloHraca;
-    private int pocetZivotov = 1;
+    private int pocetZivotov = 5;
 
     public int getPocetZivotov() {
         return pocetZivotov;
