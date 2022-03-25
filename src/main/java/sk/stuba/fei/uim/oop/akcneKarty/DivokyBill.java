@@ -9,12 +9,13 @@ import sk.stuba.fei.uim.oop.utility.KeyboardInput;
 public class DivokyBill implements AkcneKarty {
     @Override
     public void pouzitKartu(Rybnik r, BalicekKaciekaVody b, Zameriavac z) {
+        System.out.println("Hrame akcnu kartu DIVOKY BILL");
+
         int ciel;
         do {
-            ciel = KeyboardInput.readInt("Vyber policko, na ktore mieris a strielas: [0-5]");
+            ciel = KeyboardInput.readInt("Vyber policko, na ktore strielas: [0-5]");
             try {
-                z.zamierit(ciel);
-                z.vystrel(ciel);
+                z.odstranitZameriavac(ciel);
                 if (r.pozriKartu(ciel) instanceof Kacica){
                     ((Kacica) r.vyberKartu(ciel)).getPatriHracovi().zasiahni();
                     r.vlozKartuNaKoniec(b.lizniKartu());
@@ -22,9 +23,7 @@ public class DivokyBill implements AkcneKarty {
 
                 break;
             } catch (IndexOutOfBoundsException e){
-                System.out.println("Neplatna pozicia zameriavaca, platne pozicie su 0,1,2,3,4,5.");
-            } catch (IllegalArgumentException e){
-                System.out.println(e.getMessage());
+                System.out.println("Neplatna pozicia strelby, platne pozicie su 0,1,2,3,4,5.");
             }
         } while (true);
     }
