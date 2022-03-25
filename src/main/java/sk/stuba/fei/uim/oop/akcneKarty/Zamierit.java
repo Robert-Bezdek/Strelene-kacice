@@ -8,6 +8,8 @@ import sk.stuba.fei.uim.oop.utility.KeyboardInput;
 public class Zamierit implements AkcneKarty {
     @Override
     public void pouzitKartu(Rybnik r, BalicekKaciekaVody b, Zameriavac z) {
+        System.out.println("Hrame akcnu kartu ZAMIERIT");
+
         int ciel;
         do {
             ciel = KeyboardInput.readInt("Vyber policko, na ktore mieris: [0-5]");

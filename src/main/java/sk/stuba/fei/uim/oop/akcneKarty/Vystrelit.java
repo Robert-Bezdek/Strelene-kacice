@@ -11,6 +11,8 @@ import sk.stuba.fei.uim.oop.utility.KeyboardInput;
 public class Vystrelit implements AkcneKarty {
     @Override
     public void pouzitKartu(Rybnik r, BalicekKaciekaVody b, Zameriavac z) {
+        System.out.println("Hrame akcnu kartu VYSTRELIT");
+
         if (z.ziadnaKartaNieJeZamierena()){
             throw new IllegalArgumentException("Nemozete vystrelit, ziadna karta nie je zamierena.");
         }
