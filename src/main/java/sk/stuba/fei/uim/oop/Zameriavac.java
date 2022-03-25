@@ -50,4 +50,14 @@ public class Zameriavac {
 
         return true;
     }
+
+    public boolean vsetkyKartySuZamierene() {
+        for (Boolean zameriavac: zameriavace){
+            if (zameriavac.booleanValue() == Boolean.FALSE){
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

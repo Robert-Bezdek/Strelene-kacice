@@ -79,9 +79,9 @@ public class StreleneKacice {
 
             for (Hrac hrac : hraci) {
                 while (true) {
-                    AkcneKarty karta = null;
+
                     try {
-                        karta = hrac.vyberKartu();
+                        AkcneKarty karta = hrac.vyberKartu(z);
 
                         vypisHraciePole(r, z);
                         karta.pouzitKartu(r, b, z);
@@ -89,10 +89,11 @@ public class StreleneKacice {
 
                         hrac.dajKartuHracovi(bak.lizni());
                         break;
-                    } catch (IllegalArgumentException e) {
+                    } catch (RuntimeException e) {
                         System.out.println(e.getMessage());
-                        System.out.println("Vyberte prosim inu kartu");
-                        hrac.dajKartuHracovi(karta); // vrat hracovi kartu, ktora sa nedala zahrat
+                        System.out.println("Kedze hrac nemoze zahrat ziadnu kartu, zahadzuje jednu z kariet a taha si inu");
+                        hrac.zahodJednuKartu();
+                        hrac.dajKartuHracovi(bak.lizni());
                     }
                 }
             }
