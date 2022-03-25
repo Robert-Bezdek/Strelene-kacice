@@ -6,9 +6,15 @@ import sk.stuba.fei.uim.oop.Rybnik;
 import sk.stuba.fei.uim.oop.Zameriavac;
 import sk.stuba.fei.uim.oop.utility.KeyboardInput;
 
+
+
 public class Vystrelit implements AkcneKarty {
     @Override
     public void pouzitKartu(Rybnik r, BalicekKaciekaVody b, Zameriavac z) {
+        if (z.ziadnaKartaNieJeZamierena()){
+            throw new IllegalArgumentException("Nemozete vystrelit, ziadna karta nie je zamierena.");
+        }
+
         int ciel;
         do {
             ciel = KeyboardInput.readInt("Vyber policko, na ktore strielas: [0-5]");

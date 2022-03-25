@@ -38,9 +38,14 @@ public class Hrac {
 
     public void vypisKarty(){
         System.out.println();
-        for (int i=0; i<=2; i++){
-            System.out.println(i + ". " + kartyHraca.get(i));
+
+        int i = 0;
+        for (AkcneKarty karta: kartyHraca){
+            System.out.println(i + ". " + karta);
+            i++;
         }
+
+        System.out.println();
     }
 
     private final List<AkcneKarty> kartyHraca = new ArrayList<>();

@@ -40,4 +40,14 @@ public class Zameriavac {
         }
         odstranitZameriavac(ciel);
     }
+
+    public boolean ziadnaKartaNieJeZamierena(){
+        for (Boolean zameriavac: zameriavace){
+            if (zameriavac.booleanValue() == Boolean.TRUE){
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
