@@ -19,6 +19,10 @@ public class StreleneKacice {
         int pocetHracov;
         do {
             pocetHracov = KeyboardInput.readInt("Vlozte pocet hracov od 2 do 6 a stlacte ENTER");
+
+            if (neplatnyPocetHracov(pocetHracov)){
+                System.out.println("Zadali ste neplatny pocet hracov, platne hodnoty su 2,3,4,5,6.");
+            }
         } while (neplatnyPocetHracov(pocetHracov));
 
         System.out.println("Zadali ste " + pocetHracov);
