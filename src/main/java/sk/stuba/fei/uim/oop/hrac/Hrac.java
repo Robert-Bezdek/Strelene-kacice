@@ -27,7 +27,9 @@ public class Hrac {
 
     public void zahodJednuKartu(){
         System.out.println("Zahadzujem kartu hracovi");
-        kartyHraca.remove(0);
+        if (!kartyHraca.isEmpty()){
+            kartyHraca.remove(0);
+        }
     }
 
     public AkcneKarty vyberKartu(Zameriavac zameriavac){

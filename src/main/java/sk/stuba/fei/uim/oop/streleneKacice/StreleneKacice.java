@@ -78,23 +78,24 @@ public class StreleneKacice {
             System.out.println("Zostalo " + hraci.size() + " hracov\n");
 
             for (Hrac hrac : hraci) {
-                while (true) {
+                try {
+                    AkcneKarty karta = hrac.vyberKartu(z);
 
-                    try {
-                        AkcneKarty karta = hrac.vyberKartu(z);
+                    vypisHraciePole(r, z);
+                    karta.pouzitKartu(r, b, z);
+                    vypisHraciePole(r, z);
+                } catch (RuntimeException e) {
+                    System.out.println(e.getMessage());
+                    System.out.println("Kedze hrac nemoze zahrat ziadnu kartu, zahadzuje jednu z kariet");
+                    hrac.zahodJednuKartu();
+                }
 
-                        vypisHraciePole(r, z);
-                        karta.pouzitKartu(r, b, z);
-                        vypisHraciePole(r, z);
-
-                        hrac.dajKartuHracovi(bak.lizni());
-                        break;
-                    } catch (RuntimeException e) {
-                        System.out.println(e.getMessage());
-                        System.out.println("Kedze hrac nemoze zahrat ziadnu kartu, zahadzuje jednu z kariet a taha si inu");
-                        hrac.zahodJednuKartu();
-                        hrac.dajKartuHracovi(bak.lizni());
-                    }
+                try {
+                    System.out.println("Hrac vybera novu kartu z balika");
+                    hrac.dajKartuHracovi(bak.lizni());
+                } catch (RuntimeException e) {
+                    System.out.println(e.getMessage());
+                    System.exit(0);
                 }
             }
 

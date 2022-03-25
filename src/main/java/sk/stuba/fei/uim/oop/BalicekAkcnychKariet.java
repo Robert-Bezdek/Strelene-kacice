@@ -13,6 +13,9 @@ public class BalicekAkcnychKariet {
     }
 
     public AkcneKarty lizni(){
+        if (akcneKarty.isEmpty()){
+            throw new RuntimeException("Balicek akcnych kariet je prazdny");
+        }
         return this.akcneKarty.removeFirst();
     }
 
